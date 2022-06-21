@@ -1,5 +1,5 @@
 import "./App.scss";
-import Img1 from "./assets/w21.png";
+import Img1 from "./assets/w21.jpg";
 import {useState} from 'react';
 const api = {
   key: "1f5a41db1fa672eb9c2ab30bb79c95eb",
