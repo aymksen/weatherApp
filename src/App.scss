@@ -1,0 +1,122 @@
+
+.App {
+  .container {
+    overflow-x: hidden;
+    width: auto;
+    height: auto;
+    color: rgb(255, 255, 255);
+    background-color: rgb(32, 47, 48, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    padding: 3vw 10vw 3vw 10vw ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    
+    position: absolute;
+
+    
+    .search-bar {
+      
+      font-size: calc(0.5vw + 25px);
+      padding-left: 15px;
+      border-radius: 90px;
+      height:calc(1vw + 35px);
+      width: calc(10vw + 192px);
+      background-color: rgba(0, 0, 0, 0.048);
+      border: 0px solid;
+      //box-shadow: 0px 0px 7px black;
+      color: rgb(203, 198, 255);
+      
+      -moz-appearance: textfield;
+      text-transform: capitalize;
+      box-shadow: inset 0.2rem 0.2rem 0.5rem #000000ce, inset -0.2rem -0.2rem 0.5rem rgba(0, 0, 0, 0.329);
+      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgba(212, 250, 255, 0.363);
+        opacity: 1; /* Firefox */
+      }
+      &:focus {
+        box-shadow: 0px 0px 10px black;
+        }
+        &:hover {
+          background-color: #17163854;
+          transition: all 0.3s;
+        }
+        @media only screen and (max-width: 700px) {
+
+        }
+    }
+    
+    
+
+    .search-bar::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .location-box{ 
+      text-shadow: 3px 3px rgb(0, 0, 0);
+      text-align: center;
+    }
+    .location{
+      font-size: calc(1vw + 25px);
+      
+    }
+    .date{
+      font-size: calc(1vw + 12px);
+      font-style: italic;
+    }
+    .weather-box{
+      margin-top: 20px;
+      text-align: center;
+      text-shadow: 3px 3px rgb(31, 25, 25);
+      padding: 8px 15px 15px 10px;
+    }
+    .temp{
+      background-color: rgba(51, 37, 82, 0.267);
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 40px;
+      text-shadow: 3px 3px rgb(31, 25, 25);
+      font-size: calc(1vw + 12px);
+    }
+    .weather{
+      padding: 8px ;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .container {
+      max-width: 95%;
+      max-height: 70%;
+      top: 15%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      padding: 5vw 5vw 5vw 5vw ;
+    }
+    
+
+
+  }
+ 
+}
+.warm{
+  filter: hue-rotate(80deg) !important;
+}
+.cold{
+  filter: hue-rotate(-20deg) !important;
+}
+.ima{
+  transition: filter 2s;
+  position: fixed;
+  z-index: -1;
+  filter: hue-rotate(20deg);
+
+  height: 100vh;
+  width: 110vw;
+  
+  
+  
+  @media only screen and (max-width: 850px) {
+    width: 280vw;
+  }
+}
