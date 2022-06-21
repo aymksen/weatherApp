@@ -100,22 +100,20 @@
  
 }
 .warm{
-  filter: hue-rotate(80deg) !important;
+  filter: hue-rotate(60deg) !important;
 }
 .cold{
   filter: hue-rotate(-20deg) !important;
 }
 .ima{
-  transition: filter 2s;
+  transition: all 2s;
   position: fixed;
   z-index: -1;
-  filter: hue-rotate(20deg);
+  filter: hue-rotate(10deg);
 
   height: 100vh;
   width: 110vw;
-  
-  
-  
+ 
   @media only screen and (max-width: 850px) {
     width: 280vw;
   }
