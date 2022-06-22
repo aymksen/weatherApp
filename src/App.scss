@@ -1,5 +1,18 @@
-
 .App {
+  align-items: center;
+  justify-content: center;
+  
+  .zz{
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: calc(4vw + 45px);
+    text-align: center;
+    margin: 20px 20px 10px 20px;
+    @media only screen and (max-width: 850px) {
+      font-size: calc(3vw + 35px);
+    }
+    
+  }
   .container {
     overflow-x: hidden;
     width: auto;
@@ -8,104 +21,100 @@
     background-color: rgb(32, 47, 48, 0.2);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 20px;
-    padding: 3vw 10vw 3vw 10vw ;
+    padding: 4vw 11vw 4vw 11vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -52%);
-    
     position: absolute;
 
-    
-    .search-bar {
+    .search-bar { 
       
+      margin-left: auto;
+      margin-right: auto;
       font-size: calc(0.5vw + 25px);
-      padding-left: 15px;
+      padding: 30px 15px 30px 25px;
       border-radius: 90px;
-      height:calc(1vw + 35px);
-      width: calc(10vw + 192px);
+      height: calc(1vw + 35px);
+      width: 100%;
       background-color: rgba(0, 0, 0, 0.048);
       border: 0px solid;
-      //box-shadow: 0px 0px 7px black;
-      color: rgb(203, 198, 255);
-      
+      color: rgb(233, 233, 233);
       -moz-appearance: textfield;
       text-transform: capitalize;
-      box-shadow: inset 0.2rem 0.2rem 0.5rem #000000ce, inset -0.2rem -0.2rem 0.5rem rgba(0, 0, 0, 0.329);
-      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      box-shadow: inset 0.2rem 0.2rem 0.5rem #000000ce,
+        inset -0.2rem -0.2rem 0.5rem rgba(0, 0, 0, 0.329);
+        
+      &::placeholder {
         color: rgba(212, 250, 255, 0.363);
-        opacity: 1; /* Firefox */
+        opacity: 1; 
       }
       &:focus {
+        background-color: #17163854;
+        transition: all 0.3s;
+      }
+      &:hover {
         box-shadow: 0px 0px 10px black;
-        }
-        &:hover {
-          background-color: #17163854;
-          transition: all 0.3s;
-        }
-        @media only screen and (max-width: 700px) {
-
-        }
+      }
+      @media only screen and (max-width: 850px) {
+        width: 100%;
+        height: calc(1vw + 40px);
+      }
     }
-    
-    
 
     .search-bar::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
 
-    .location-box{ 
+    .location-box {
       text-shadow: 3px 3px rgb(0, 0, 0);
       text-align: center;
     }
-    .location{
+    .location {
       font-size: calc(1vw + 25px);
-      
     }
-    .date{
+    .date {
+      text-align: center;
       font-size: calc(1vw + 12px);
       font-style: italic;
+      margin: 10px 10px 20px 10px;
     }
-    .weather-box{
-      margin-top: 20px;
+    .weather-box {
+      margin-top: 5px;
       text-align: center;
       text-shadow: 3px 3px rgb(31, 25, 25);
       padding: 8px 15px 15px 10px;
     }
-    .temp{
+    .temp {
       background-color: rgba(51, 37, 82, 0.267);
       display: inline-block;
       padding: 8px 15px;
       border-radius: 40px;
       text-shadow: 3px 3px rgb(31, 25, 25);
+      font-size: calc(1vw + 20px);
+    }
+    .weather {
+      padding: 8px;
       font-size: calc(1vw + 12px);
     }
-    .weather{
-      padding: 8px ;
-    }
   }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 850px) {
     .container {
-      max-width: 95%;
-      max-height: 70%;
+      width: 78%;
       top: 15%;
       left: 50%;
       transform: translate(-50%, 0%);
-      padding: 5vw 5vw 5vw 5vw ;
+      padding: 6vw 5vw 8vw 5vw;
     }
-    
-
-
   }
- 
 }
-.warm{
+.warm {
   filter: hue-rotate(60deg) !important;
 }
-.cold{
+.cold {
   filter: hue-rotate(-20deg) !important;
 }
-.ima{
+.ima {
   transition: all 2s;
   position: fixed;
   z-index: -1;
@@ -113,8 +122,10 @@
 
   height: 100vh;
   width: 110vw;
- 
+
   @media only screen and (max-width: 850px) {
+    height: auto;
+    min-height: 100vh;
     width: 280vw;
   }
 }

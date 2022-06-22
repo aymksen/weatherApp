@@ -1,6 +1,8 @@
 import "./App.scss";
 import Img1 from "./assets/w21.jpg";
 import {useState} from 'react';
+import Clock from "./Clock";
+
 const api = {
   key: "1f5a41db1fa672eb9c2ab30bb79c95eb",
   base: "https://api.openweathermap.org/data/2.5/",
@@ -19,9 +21,8 @@ function App() {
         setWeather(result)
       });
     }
-
-
   }
+  
 
 
 
@@ -32,12 +33,18 @@ function App() {
     let date =d.getDate();
     let month = months[d.getMonth()];
     let year = d.getFullYear();
+    
 
     return `${day} ${date} ${month} ${year}`
   }
+  // const timeBuilder = (d) => {
+  //   let curTime = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+  //   return ` ${curTime}`
+  // }
 
-
+  
   return (
+    
     <div className="App">
       <img className={(typeof weather.main != "undefined") ?
       ((weather.main.temp > 25 ) ? 'ima warm' : (weather.main.temp < 15 ) ? 'ima cold' :'ima') :
@@ -45,11 +52,13 @@ function App() {
     
     } src={Img1} alt="" />
       <div className="container">
+      <Clock className="zz"/>
+      {/* <div className="time">{timeBuilder(new Date())}</div> */}
+      <div className="date">{dateBuilder(new Date())}</div>
       {(typeof weather.main != "undefined") ? ( 
           <div>
           <div className="location-box">
             <div className="location"> {weather.name}, {weather.sys.country}</div>
-            <div className="date">{dateBuilder(new Date())}</div>
           </div> 
           <div className="weather-box">
             <div className="temp">{Math.round(weather.main.temp)}°C</div>
@@ -58,7 +67,7 @@ function App() {
         </div>
          ) :('')}
         <div className="search-box">
-          <input type="text" className="search-bar" placeholder="Search..."
+          <input type="text" className="search-bar" placeholder="Enter a city"
           onChange={e=> setQuery(e.target.value)}
           value={query}
           onKeyPress={search}
@@ -68,6 +77,7 @@ function App() {
       </div> 
     </div>
   );
+  
 }
 
 export default App;
