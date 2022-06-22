@@ -2,14 +2,14 @@
   align-items: center;
   justify-content: center;
   
-  .zz{
+  .clock{
     overflow: hidden;
     white-space: nowrap;
     font-size: calc(4vw + 45px);
     text-align: center;
     margin: 20px 20px 10px 20px;
-    @media only screen and (max-width: 850px) {
-      font-size: calc(3vw + 35px);
+    @media only screen and (max-width: 767px) {
+      font-size: calc(3vw + 21px);
     }
     
   }

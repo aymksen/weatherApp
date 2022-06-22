@@ -11,7 +11,7 @@ import "./App.scss";
         },1000);
 
     },[]);
-  return <div className='zz'>{clockState}</div>;
+  return <div className='clock'>{clockState}</div>;
   
 }
 export default Clock;
