@@ -1,33 +1,42 @@
 .App {
+  
   align-items: center;
   justify-content: center;
-  
-  .clock{
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: calc(4vw + 45px);
-    text-align: center;
-    margin: 20px 20px 10px 20px;
-    @media only screen and (max-width: 767px) {
-      font-size: calc(3vw + 21px);
-    }
+  --col1: #cc0707;
+    --col2: #d87a00;
+
+    --col3: #0d4fb3;
+    --col4: #005ce6;
+
+    --col5: #000424;
+    --col6: #000000;
+    .clock{
     
-  }
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: calc(4vw + 45px);
+      text-align: center;
+      margin: 20px 20px 10px 20px;
+      @media only screen and (max-width: 767px) {
+        font-size: calc(3vw + 41px);
+        margin-bottom: 30px;
+      }
+      
+    }
   .container {
-    backdrop-filter: blur(5px);
     overflow-x: hidden;
-    width: auto;
     height: auto;
+    width: 60%;
     color: rgb(255, 255, 255);
-    background-color: rgb(32, 47, 48, 0.2);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 4vw 11vw 4vw 11vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -52%);
     position: absolute;
-
+    background: linear-gradient(to bottom right, #040414 ,#1b0e55);
+    
     .search-bar { 
       
       margin-left: auto;
@@ -50,7 +59,7 @@
         opacity: 1; 
       }
       &:focus {
-        background-color: #17163854;
+        background-color: #17163811;
         transition: all 0.3s;
       }
       &:hover {
@@ -59,6 +68,7 @@
       @media only screen and (max-width: 850px) {
         width: 100%;
         height: calc(1vw + 40px);
+        margin-top: 10vw;
       }
     }
 
@@ -79,6 +89,7 @@
       font-size: calc(1vw + 12px);
       font-style: italic;
       margin: 10px 10px 20px 10px;
+    
     }
     .weather-box {
       margin-top: 5px;
@@ -101,32 +112,36 @@
   }
   @media only screen and (max-width: 850px) {
     .container {
-      width: 78%;
+      width: 88%;
       top: 15%;
       left: 50%;
       transform: translate(-50%, 0%);
-      padding: 6vw 5vw 8vw 5vw;
+      padding: 10vw 5vw 10vw 5vw;
     }
   }
 }
 .warm {
-  filter: hue-rotate(60deg) !important;
+  filter: hue-rotate(150deg) !important;
 }
 .cold {
-  filter: hue-rotate(-20deg) !important;
+  filter: hue-rotate(10deg) !important;
 }
 .ima {
+  
   transition: all 2s;
   position: fixed;
   z-index: -1;
   filter: hue-rotate(10deg);
-
-  height: 100vh;
-  width: 110vw;
+  background: linear-gradient(to bottom right, #005ae0ef ,#1053b8);
+  height: 100%;
+  width: 110%;
+  
+  filter: blur(2px);
+  
 
   @media only screen and (max-width: 850px) {
     height: auto;
     min-height: 100vh;
-    width: 280vw;
+    
   }
 }

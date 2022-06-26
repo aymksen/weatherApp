@@ -1,8 +1,8 @@
 import "./App.scss";
-import Img1 from "./assets/w21.jpg";
+//import Img1 from "./assets/w21.jpg";
 import {useState} from 'react';
 import Clock from "./Clock";
-
+import Cloud from './Cloud/Cloud';
 const api = {
   key: "1f5a41db1fa672eb9c2ab30bb79c95eb",
   base: "https://api.openweathermap.org/data/2.5/",
@@ -46,13 +46,18 @@ function App() {
   return (
     
     <div className="App">
-      <img className={(typeof weather.main != "undefined") ?
+      {/* <img className={(typeof weather.main != "undefined") ?
       ((weather.main.temp > 25 ) ? 'ima warm' : (weather.main.temp < 15 ) ? 'ima cold' :'ima') :
       'ima'
     
-    } src={Img1} alt="" />
+    } src={Img1} alt="" /> */}
+    <div className={(typeof weather.main != "undefined") ?
+      ((weather.main.temp > 25 ) ? 'ima warm' : (weather.main.temp < 15 ) ? 'ima cold' :'ima') :
+      'ima'}>
+        <Cloud /></div>
       <div className="container">
-      <Clock className="zz"/>
+      <Cloud />
+      <Clock className="clock"/>
       {/* <div className="time">{timeBuilder(new Date())}</div> */}
       <div className="date">{dateBuilder(new Date())}</div>
       {(typeof weather.main != "undefined") ? ( 
